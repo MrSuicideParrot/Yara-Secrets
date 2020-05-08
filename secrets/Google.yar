@@ -22,7 +22,7 @@ rule Google_Cloud_Platform_API_Key
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]/
+        $regex1 = /(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]/
 
     condition:
         $regex1
@@ -37,7 +37,7 @@ rule Google_Oauth
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com/
+        $regex1 = /[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com/ nocase
 
     condition:
         $regex1
@@ -52,7 +52,7 @@ rule Google_Oauth_Access_Token
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /ya29\\.[0-9A-Za-z\\-_]+/
+        $regex1 = /ya29\\.[0-9A-Za-z\\-_]+/ nocase
 
     condition:
         $regex1

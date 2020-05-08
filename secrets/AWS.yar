@@ -22,7 +22,7 @@ rule AWS_cred_file
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /(?i)(aws_access_key_id|aws_secret_access_key)(.{0,20})?=.[0-9a-zA-Z\/+]{20,40}/ nocase
+        $regex1 = /(aws_access_key_id|aws_secret_access_key)(.{0,20})?=.[0-9a-zA-Z\/+]{20,40}/ nocase
 
     condition:
         $regex1
@@ -38,7 +38,7 @@ rule AWS_Secret_Key
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]/ nocase
+        $regex1 = /aws(.{0,20})?['\"][0-9a-zA-Z\/+]{40}['\"]/ nocase
 
     condition:
         $regex1
