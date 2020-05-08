@@ -7,7 +7,7 @@ rule Github
         reference = "https://github.com/l4yton/RegHex"
 
     strings:
-        $regex1 = /github(.{0,20})?(?-i)['\"][0-9a-zA-Z]{35,40}/ nocase
+        $regex1 = /github(.{0,20})?['\"][0-9a-zA-Z]{35,40}/ nocase
 
     condition:
         $regex1
